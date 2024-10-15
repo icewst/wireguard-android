@@ -2,6 +2,9 @@
 
 pluginManagement {
     repositories {
+        flatDir {
+            dirs("lib")  // 指向 'lib' 目录
+        }
         gradlePluginPortal()
         google()
         mavenCentral()
@@ -18,5 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "wireguard-android"
 
-include(":tunnel")
+//include(":tunnel")
 include(":ui")

@@ -62,10 +62,11 @@ android {
         warning += "MissingTranslation"
         warning += "ImpliedQuantity"
     }
+
 }
 
 dependencies {
-    implementation(project(":tunnel"))
+//    implementation(project(":tunnel"))
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.annotation)
     implementation(libs.androidx.appcompat)
@@ -81,6 +82,9 @@ dependencies {
     implementation(libs.zxing.android.embedded)
     implementation(libs.kotlinx.coroutines.android)
     coreLibraryDesugaring(libs.desugarJdkLibs)
+
+//    implementation("tunnel-release")   // 使用 AAR 文件
+    implementation(files("libs/tunnel-release.aar"))//，把这个aar换成你的就ok了。
 }
 
 tasks.withType<JavaCompile>().configureEach {
